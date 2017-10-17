@@ -1,2 +1,2 @@
 alias keepass='mono /Applications/KeePass-2.28/KeePass.exe'
-alias update='sh ~/update.sh; update_scm_breeze; mas upgrade'
+alias update='sh ~/.update.sh; update_scm_breeze; mas upgrade'
