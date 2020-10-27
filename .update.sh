@@ -1,4 +1,3 @@
-#brew update && brew upgrade brew-cask && brew upgrade && brew cleanup && brew cask cleanup;
 echo "Do: Updating brew"
 brew update;
 echo "Do: Updating brew (2)"
@@ -9,3 +8,5 @@ echo "Do: Upgrading casks"
 brew upgrade --cask
 echo "Do: brew cleanup"
 brew cleanup;
+echo "Update tldr"
+tldr --update
