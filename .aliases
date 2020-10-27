@@ -1,2 +1,9 @@
 alias keepass='mono /Applications/KeePass-2.28/KeePass.exe'
-alias update='sh ~/.update.sh; update_scm_breeze; mas upgrade'
+alias update='sh ~/.update.sh; update_scm_breeze; mas upgrade; omz update'
+
+# start and stop hashicorp vault service locally
+alias .vault-start='sudo launchctl load -w /Library/LaunchDaemons/com.hashicorp.vault.plist'
+alias .vault-stop='sudo launchctl unload -w /Library/LaunchDaemons/com.hashicorp.vault.plist'
+
+# Kubernetes efficiency :)
+alias k=kubectl
