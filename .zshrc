@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -95,4 +102,21 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 source ~/.bash_profile
-alias vim='/usr/local/Cellar/macvim/8.0-138/bin/mvim -v'
+alias vim='/usr/local/bin/mvim'
+
+# add this configuration to ~/.zshrc
+export HISTFILE=~/.zsh_history  # ensure history file visibility
+export HH_CONFIG=hicolor        # get more colors
+bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
+
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa
+
+eval $(thefuck --alias)
+export HOMEBREW_GITHUB_API_TOKEN=a331ff27a51165fa8e2961d6bee709086bd4a015
+
+export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
