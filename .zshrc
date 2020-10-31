@@ -113,7 +113,7 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
 
 eval $(thefuck --alias)
-export HOMEBREW_GITHUB_API_TOKEN=a331ff27a51165fa8e2961d6bee709086bd4a015
+export HOMEBREW_GITHUB_API_TOKEN="some-token"
 
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
